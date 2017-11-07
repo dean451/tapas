@@ -3,9 +3,9 @@ user = OpenStruct.new(:qualifies_for_free_sandwich? => true)
 
 def receipt_message(user)
   message = if user.qualifies_for_free_sandwich?
-    return "Congratulations, you qualify for a free sandwich!"
+    "Congratulations, you qualify for a free sandwich!"
   else
-    return "Come again soon!"
+    "Come again soon!"
   end
   if rand(10) == 0
     message << "\nBring this receipt back for a 10% discount!"
@@ -14,19 +14,19 @@ def receipt_message(user)
 end
 puts receipt_message(user)
 
-# def slugify(title)
-#   title
-#   .strip
-#   .tr_s('^A-Za-z0-9', '-')
-#   .downcase
-# end
+def slugify(title)
+  title
+  .strip
+  .tr_s('^A-Za-z0-9', '-')
+  .downcase
+end
 #
-# puts slugify("'Twas brillig, and the slithy toves...'")
+puts slugify("'Twas brillig, and the slithy toves...'")
 
-# shopping_list = [
-#   :apple,
-#   :orange,
-#   :banana,
-# ]
-#
-# puts shopping_list
+shopping_list = [
+  :apple,
+  :orange,
+  :banana
+]
+
+puts shopping_list
