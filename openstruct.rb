@@ -3,7 +3,7 @@ require 'json'
 
 def get_observation
   key  = ENV['WUNDERGROUND_KEY']
-  url  = "http://api.wunderground.com/api/cc1b76041685d1be/conditions/q/CA/San_Francisco.json"
+  url  = "http://api.wunderground.com/api/#{key}/conditions/q/CA/San_Francisco.json"
   data = open(url).read
   JSON.parse(data)['current_observation']
 end
