@@ -10,15 +10,14 @@ p even.call 3
 p even === 2
 
 
-  require 'net/http'
+require 'net/http'
 
-  SUCCESS = ->(response) { (200..299) === response.code.to_i }
-  CLIENT_ERROR = ->(response) { (400..499) === response.code.to_i }
+SUCCESS = ->(response) { (200..299) === response.code.to_i }
+CLIENT_ERROR = ->(response) { (400..499) === response.code.to_i }
 
-  response = Net::HTTP.get_response(URI.parse("http://www.google.com"))
-  case response
-  when SUCCESS then puts "Success!"
-  when CLIENT_ERROR then puts "Client error."
-  else puts "Other"
-  end
-  # >> Success!
+response = Net::HTTP.get_response(URI.parse("http://www.google.com"))
+case response
+when SUCCESS then puts "Success!"
+when CLIENT_ERROR then puts "Client error."
+else puts "Other"
+end
