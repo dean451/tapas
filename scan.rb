@@ -11,9 +11,18 @@ vestibulum accumsan nisl.
 END
 EMAIL_PATTERN = /\S+@\S+/i
 
-addresses = []
-while(match = EMAIL_PATTERN.match(text))
-  addresses << match[0]
-  text = match.post_match
+# addresses = []
+# while(match = EMAIL_PATTERN.match(text))
+#   addresses << match[0]
+#   text = match.post_match
+# end
+
+text.scan(EMAIL_PATTERN) do |address|
+  puts address
 end
-p addresses
+
+EMAIL_PATTERN = /(\S+)@(\S+)/i
+
+text.scan(EMAIL_PATTERN) do |name, host|
+  puts "Name: #{name}, host: #{host}"
+end
