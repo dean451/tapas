@@ -24,3 +24,7 @@ if (2+2) == 5
   tip = "follow the white rabbit"
 end
 p tip
+
+@instance_var = true
+p @instance_va
+p [1,2,3].detect { |n| n == 5 }
